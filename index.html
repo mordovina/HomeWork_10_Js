@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 10</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="data.js"></script>
+</head>
+<body>
+    <div class="product-box">
+        <div class="product">
+            <img class="product__img" src="photo.jpg" alt="photo">
+            <div class="product__content">
+                <a class="product__name" href="product.html">Продукт из html</a>
+                <p class="product__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p class="product__price">55</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+     
+    const productBox = document.querySelector('.product-box');
+
+    productData.forEach(productData => {
+        
+    const productEl = document.createElement('div');
+    productEl.classList.add('product');
+
+    const productImg = document.createElement('img');
+    productImg.classList.add('product__img');
+    productImg.setAttribute('alt', productData.alt);
+    productImg.src = productData.src;
+
+    const productContent = document.createElement('div');
+    productContent.classList.add('product__сontent');
+
+    const productLink = document.createElement('a');
+    productLink.href = productData.link;
+    productLink.textContent = productData.name;
+
+    const productText = document.createElement('p');
+    productText.classList.add('product__text');
+    productText.textContent = productData.desс;
+
+    const productPrice = document.createElement('p');
+    productPrice.classList.add('product__price');
+    productPrice.textContent = productData.price;
+
+    productContent.appendChild(productLink);
+    productContent.appendChild(productText);
+    productContent.appendChild(productPrice);
+    productEl.appendChild(productImg);
+    productEl.appendChild(productContent);
+    productBox.appendChild(productEl);
+
+});
+
+
+    </script>
+</body>
+</html>
